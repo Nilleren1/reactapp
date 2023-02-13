@@ -108,15 +108,14 @@ function App() {
 
 
   return (
-    <div className="container">
-      <Navbar fixed="top"></Navbar>
+    <><div><Navbar fixed="top"></Navbar></div><div className="container">
       <Header title="Car Share" onAdd={() => setShowAddCar(!showAddCar)} showAdd={showAddCar} />
       {showAddCar && <AddCar onAdd={addCar} />}
       <h2>Good for environment!</h2>
       {cars.length > 0 ? <Cars cars={cars} onDelete={deleteCar}
         onToggle={toggleOccupied} /> : 'No Cars to find'}
       <Footer />
-    </div>
+    </div></>
   );
 }
 
