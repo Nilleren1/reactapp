@@ -3,37 +3,38 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Cars from "./components/Cars"
 import AddCar from './components/AddCar'
+import Navbar from "./components/Navbar";
 
 
 
 function App() {
   const [showAddCar, setShowAddCar] = useState(false)
   const [cars, setCars] = useState([
-    {
-      id: 1,
-      text: 'Mercedes',
-      day: 'blabla',
-      occupied: 'true',
-    },
-    {
-      id: 2,
-      text: 'Ferrari',
-      day: 'blabla',
-      occupied: 'false',
-    },
-    {
-      id: 3,
-      text: 'Volkswagen',
-      day: 'blabla',
-      occupied: 'true',
-    },
-  ])
+    // {
+    //   id: 1,
+    //   text: 'Mercedes',
+    //   day: 'blabla',
+    //   occupied: 'true',
+    // },
+    // {
+    //   id: 2,
+    //   text: 'Ferrari',
+    //   day: 'blabla',
+    //   occupied: 'false',
+    // },
+    // {
+    //   id: 3,
+    //   text: 'Volkswagen',
+    //   day: 'blabla',
+    //   occupied: 'true',
+    // },
+  ]);
 
-  //
   useEffect(() => {
     const getCars = async () => {
       const carsFromServer = await fetchCars()
       setCars(carsFromServer)
+      console.log(carsFromServer)
     }
 
     getCars()
@@ -41,7 +42,7 @@ function App() {
 
   //Fetch Cars
   const fetchCars = async () => {
-    const res = await fetch('http://localhost:3000/cars')
+    const res = await fetch('https://carsharerestapi23.azurewebsites.net/cars')
     const data = await res.json()
 
     return data
@@ -49,7 +50,7 @@ function App() {
 
   //Fetch Car
   const fetchCar = async (id) => {
-    const res = await fetch(`http://localhost:3000/cars/${id}`)
+    const res = await fetch(`https://carsharerestapi23.azurewebsites.net/cars/${id}`)
     const data = await res.json()
 
     return data
@@ -57,7 +58,7 @@ function App() {
 
   //Add Car
   const addCar = async (car) => {
-    const res = await fetch('http://localhost:3000/cars', {
+    const res = await fetch('https://carsharerestapi23.azurewebsites.net/cars', {
       method: 'POST',
       headers: {
         'Content-type': 'application/jason'
@@ -77,7 +78,7 @@ function App() {
   //Delete Car
   const deleteCar = async (id) => {
     //console.log('delete', id)
-    await fetch(`http://localhost:3000/cars/${id}`, {
+    await fetch(`https://carsharerestapi23.azurewebsites.net/cars/${id}`, {
       method: 'DELETE'
     })
 
@@ -89,7 +90,7 @@ function App() {
     const carToToggle = await fetchCar(id)
     const updateCar = { ...carToToggle, occupied: !carToToggle.occupied }
 
-    const res = await fetch(`http://localhost:3000/cars/${id}`, {
+    const res = await fetch(`https://carsharerestapi23.azurewebsites.net/cars/${id}`, {
       method: 'PUT',
       headers: {
         'Content-type': 'application/json'
@@ -108,6 +109,7 @@ function App() {
 
   return (
     <div className="container">
+      <Navbar fixed="top"></Navbar>
       <Header title="Car Share" onAdd={() => setShowAddCar(!showAddCar)} showAdd={showAddCar} />
       {showAddCar && <AddCar onAdd={addCar} />}
       <h2>Good for environment!</h2>
