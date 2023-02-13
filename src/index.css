@@ -27,7 +27,22 @@ body{
     filter: blur(6px);
 }
 
-.container {
+.myNav{
+  font-size: 1cm;
+  margin-bottom: 2cm;
+}
+
+.myFooter{
+  background-color: #343A40;
+  color: #e0e0e0;
+  position:absolute;
+  left:0;
+  bottom:0;
+  right:0;
+  border-top: 1px solid black;
+}
+
+.contain {
   max-width: 30%;
   margin: 30px auto;
   overflow: auto;

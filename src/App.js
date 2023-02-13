@@ -3,7 +3,10 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Cars from "./components/Cars"
 import AddCar from './components/AddCar'
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar"
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 
@@ -108,14 +111,43 @@ function App() {
 
 
   return (
-    <><div><Navbar fixed="top"></Navbar></div><div className="container">
-      <Header title="Car Share" onAdd={() => setShowAddCar(!showAddCar)} showAdd={showAddCar} />
-      {showAddCar && <AddCar onAdd={addCar} />}
-      <h2>Good for environment!</h2>
-      {cars.length > 0 ? <Cars cars={cars} onDelete={deleteCar}
-        onToggle={toggleOccupied} /> : 'No Cars to find'}
-      <Footer />
-    </div></>
+    // <><div>
+    //<Navbar fixed="top"></Navbar>
+    //</div>
+    //<div className="container">
+    //   <Row>
+    //     <h3>Dette er et row</h3>
+    //   </Row>
+    //   <Header title="Car Share" onAdd={() => setShowAddCar(!showAddCar)} showAdd={showAddCar} />
+
+    //   {showAddCar && <AddCar onAdd={addCar} />}
+    //   <h2>Good for environment!</h2>
+    //   {cars.length > 0 ? <Cars cars={cars} onDelete={deleteCar}
+    //     onToggle={toggleOccupied} /> : 'No Cars to find'}
+    //   <Footer />
+    // </div></>
+<div>
+<Container fluid>
+  <Row>
+    <Col><Navbar></Navbar></Col>
+  </Row>
+</Container>
+
+<Container className='contain'>
+<Row>
+    <Col><Header title="Car Share" onAdd={() => setShowAddCar(!showAddCar)} showAdd={showAddCar} /></Col>
+    {showAddCar && <AddCar onAdd={addCar} />}
+    
+  </Row>
+  <Row><Col><h2>Good for environment!</h2></Col></Row>
+  <Row><Col>{cars.length > 0 ? <Cars cars={cars} onDelete={deleteCar}
+    onToggle={toggleOccupied} /> : 'No Cars to find'}</Col></Row>
+</Container>
+
+<Container fixed='bottom' fluid>
+  <Row className='myFooter'> <Col> <Footer /> </Col> </Row>
+</Container>
+  </div>
   );
 }
 
