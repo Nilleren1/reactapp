@@ -8,9 +8,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-
-
 function App() {
+  //const cors = require("cors"); app.use(cors());
+
   const [showAddCar, setShowAddCar] = useState(false)
   const [cars, setCars] = useState([
     // {
@@ -45,15 +45,16 @@ function App() {
 
   //Fetch Cars
   const fetchCars = async () => {
-    const res = await fetch('https://carsharerestapi23.azurewebsites.net/cars')
+    const res = await fetch('https://corolabpraktik.azurewebsites.net/cars')
     const data = await res.json()
 
     return data
   }
+  
 
   //Fetch Car
   const fetchCar = async (id) => {
-    const res = await fetch(`https://carsharerestapi23.azurewebsites.net/cars/${id}`)
+    const res = await fetch(`https://corolabpraktik.azurewebsites.net/cars/${id}`)
     const data = await res.json()
 
     return data
@@ -61,7 +62,7 @@ function App() {
 
   //Add Car
   const addCar = async (car) => {
-    const res = await fetch('https://carsharerestapi23.azurewebsites.net/cars', {
+    const res = await fetch('https://corolabpraktik.azurewebsites.net/cars', {
       method: 'POST',
       headers: {
         'Content-type': 'application/jason'
@@ -127,12 +128,8 @@ function App() {
     //   <Footer />
     // </div></>
 <div>
-<Container fluid>
-  <Row>
-    <Col><Navbar></Navbar></Col>
-  </Row>
-</Container>
 
+<div><Navbar></Navbar></div>
 <Container className='contain'>
 <Row>
     <Col><Header title="Car Share" onAdd={() => setShowAddCar(!showAddCar)} showAdd={showAddCar} /></Col>

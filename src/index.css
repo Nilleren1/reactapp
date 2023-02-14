@@ -16,6 +16,7 @@ body{
     
 }
 
+
 .background{
     background-image: url('https://www.kingsville.ca/en/our-community/resources/Parking/Several-empty-parking-spaces-in-a-parking-lot.png');
     background-repeat: no-repeat;
@@ -25,11 +26,6 @@ body{
   height: 100%;
   z-index: -1;
     filter: blur(6px);
-}
-
-.myNav{
-  font-size: 1cm;
-  margin-bottom: 2cm;
 }
 
 .myFooter{
@@ -61,17 +57,17 @@ body{
   margin-bottom: 20px;
 }
 
+.navbar-brand{
+  color: white;
+}
+
 .btn {
-  display: inline-block;
-  background: #000;
-  color: #fff;
   border: none;
-  padding: 10px 20px;
-  margin: 5px;
+  padding: 10px;
+  margin: 15px;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 20px;
   font-family: inherit;
 }
 
