@@ -45,7 +45,7 @@ function App() {
 
   //Fetch Cars
   const fetchCars = async () => {
-    const res = await fetch('https://carsharerestapi23.azurewebsites.net/cars')
+    const res = await fetch('https://corolabpraktik.azurewebsites.net/Cars')
     const data = await res.json()
 
     return data
@@ -53,7 +53,7 @@ function App() {
 
   //Fetch Car
   const fetchCar = async (id) => {
-    const res = await fetch(`https://carsharerestapi23.azurewebsites.net/cars/${id}`)
+    const res = await fetch(`https://corolabpraktik.azurewebsites.net/Cars/${id}`)
     const data = await res.json()
 
     return data
@@ -61,7 +61,7 @@ function App() {
 
   //Add Car
   const addCar = async (car) => {
-    const res = await fetch('https://carsharerestapi23.azurewebsites.net/cars', {
+    const res = await fetch('https://corolabpraktik.azurewebsites.net/Cars', {
       method: 'POST',
       headers: {
         'Content-type': 'application/jason'
@@ -81,7 +81,7 @@ function App() {
   //Delete Car
   const deleteCar = async (id) => {
     //console.log('delete', id)
-    await fetch(`https://carsharerestapi23.azurewebsites.net/cars/${id}`, {
+    await fetch(`https://corolabpraktik.azurewebsites.net/Cars/${id}`, {
       method: 'DELETE'
     })
 
@@ -93,7 +93,7 @@ function App() {
     const carToToggle = await fetchCar(id)
     const updateCar = { ...carToToggle, occupied: !carToToggle.occupied }
 
-    const res = await fetch(`https://carsharerestapi23.azurewebsites.net/cars/${id}`, {
+    const res = await fetch(`https://corolabpraktik.azurewebsites.net/Cars/${id}`, {
       method: 'PUT',
       headers: {
         'Content-type': 'application/json'
