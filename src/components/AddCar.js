@@ -34,45 +34,53 @@ const onSubmit = (e) => {
 
   return (
     <form className="add-form" onSubmit={onSubmit}>
-      <h3>Cars</h3>
-      <div className="form-control">
+      <h3>Car Form</h3>
+      <div className='myInput'>
         <label>Start Destination</label>
+        <br></br>
         <input type='text' placeholder="Add start destination" value={startDestination} onChange={(e) => setStartDest(e.target.value)}></input>
       </div>
-      <div className="form-control">
+      <div className='myInput'>
       <label>End Destination</label>
+      <br></br>
         <input type='text' placeholder="Add end destination" value={endDestination} onChange={(e) => setEndDest(e.target.value)}></input>
       </div>
-      <div className="form-control">
+      <div className='myInput'>
         <label>Driving Date</label>
+        <br></br>
         <input type='text' placeholder="Add the date" value={driveDate} onChange={(e) => setDriveDate(e.target.value)}></input>
       </div>
-      <div className="form-control">
+      <div className='myInput'>
       <label>Price</label>
+      <br></br>
         <input type='number' placeholder="Add price" value={price} onChange={(e) => setPrice(e.target.value)}></input>
       </div>
-      <div className="form-control">
+      <div className='myInput'>
       <label>Available Seats</label>
+      <br></br>
         <input type='number' placeholder="how many seats?" value={availableSeats} onChange={(e) => setSeats(e.target.value)}></input>
       </div>
-      <div className="form-control">
+      <div className='myInput'>
       <label>Brand</label>
+      <br></br>
         <input type='text' placeholder="Add the Brand" value={brand} onChange={(e) => setBrand(e.target.value)}></input>
       </div>
-      <div className="form-control">
+      <div className='myInput'>
       <label>Model</label>
+      <br></br>
         <input type='text' placeholder="Add the Model" value={model} onChange={(e) => setModel(e.target.value)}></input>
       </div>
-      <div className="form-control">
+      <div className='myInput'>
       <label>Fuel Type</label>
+      <br></br>
         <input type='text' placeholder="Add what type of fuel" value={fuelType} onChange={(e) => setFuelType(e.target.value)}></input>
       </div>
-      <div className="form-control form-control-check">
+      <div className="myInput form-control-check">
         <label>is Full</label>
         <input type='checkbox' checked={isFull} value={isFull} onChange={(e) => setIsFull(e.currentTarget.checked)}></input>
       </div>
     
-    <input type='submit' value='Save Car' className="btn btn-block"></input>
+    <input style={{backgroundColor: 'green'}} type='submit' value='Save Car' className="btn btn-block"></input>
     </form>
 
   )

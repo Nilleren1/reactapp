@@ -16,6 +16,10 @@ body{
     
 }
 
+.myInput{
+  margin-bottom: 1cm;
+}
+
 
 .background{
     background-image: url('https://www.kingsville.ca/en/our-community/resources/Parking/Several-empty-parking-spaces-in-a-parking-lot.png');
@@ -39,7 +43,7 @@ body{
 }
 
 .contain {
-  max-width: 30%;
+  max-width: 50%;
   margin: 30px auto;
   overflow: auto;
   min-height: 60%;

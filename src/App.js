@@ -4,13 +4,11 @@ import Footer from "./components/Footer"
 import Cars from "./components/Cars"
 import AddCar from './components/AddCar'
 import Navbar from "./components/Navbar"
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 function App() {
-  //const cors = require("cors"); app.use(cors());
-
   const [showAddCar, setShowAddCar] = useState(false)
   const [cars, setCars] = useState([
     // {
@@ -131,13 +129,10 @@ function App() {
 
 <div><Navbar></Navbar></div>
 <Container className='contain'>
-<Row>
     <Col><Header title="Car Share" onAdd={() => setShowAddCar(!showAddCar)} showAdd={showAddCar} /></Col>
     {showAddCar && <AddCar onAdd={addCar} />}
-    
-  </Row>
-  <Row><Col><h2>Good for environment!</h2></Col></Row>
-  <Row><Col>{cars.length > 0 ? <Cars cars={cars} onDelete={deleteCar}
+  <Row><Col><h2>Good for environment!</h2></Col>
+  <Col>{cars.length > 0 ? <Cars cars={cars} onDelete={deleteCar}
     onToggle={toggleOccupied} /> : 'No Cars to find'}</Col></Row>
 </Container>
 
